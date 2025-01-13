@@ -2,8 +2,12 @@ const express = require("express");
 
 
 const app = express();
+
 const userRoute = require('./routes/User');
-app.use('/user', userRoute);
+const accueilRouute = require('./routes/accueil');
+
+app.use('/User', userRoute);
+app.use('/accueil', accueilRouute);
 
 
 
