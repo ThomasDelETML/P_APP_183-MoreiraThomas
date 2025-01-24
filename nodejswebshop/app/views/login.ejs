@@ -4,22 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link
+      href="https://fonts.cdnfonts.com/css/opus-magnus-condensed"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.cdnfonts.com/css/flash-rogers" rel="stylesheet" />
+
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/login.css" />
   </head>
   <body>
-    <h1>Connexion</h1>
-    <form action="/login" method="post">
-      <div>
-        <label for="username">Nom d'utilisateur:</label>
-        <input type="text" id="username" name="username" required />
-      </div>
-      <div>
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <div>
-        <button type="submit">Se connecter</button>
-      </div>
-    </form>
+    <!-- Header -->
+    <header>
+      <h1>EVROPA HERITAGE</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/login">Mon compte</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Connexion</h2>
+      <form action="/login" method="post">
+        <div>
+          <label for="username">Nom d'utilisateur:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div>
+          <label for="password">Mot de passe:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div>
+          <button type="submit">Se connecter</button>
+        </div>
+      </form>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 EVROPA HERITAGE. Tous droits réservés.</p>
+    </footer>
   </body>
 </html>
