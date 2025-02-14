@@ -1,18 +1,20 @@
 const express = require("express");
-const path = require("path");
-const authRoutes = require("./routes/auth");
-
 const app = express();
+const path = require("path");
+const bodyParser = require("body-parser");
+const userRoutes = require("./routes/User");
+// appel createTable.js pour la connection et création de la table t_Users (l'activer juste si la table n'est pas créé)
+// require("./db/createTable");
 
-// Définir le dossier public pour les fichiers statiques (CSS, images, etc.)
-app.use(express.static(path.join(__dirname, "public")));
-app.use("/", authRoutes);
-
-// Définir EJS comme moteur de rendu
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views")); // S'assurer que Express trouve les fichiers EJS
 
-// Démarrage du serveur
+// indique que on a un dossier public dont on utilisera pour mettre les css/images
+app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// charge uniquement userRoutes sous "/"
+app.use("/", userRoutes);
+
 app.listen(8080, () => {
-  console.log("Server running on http://localhost:8080");
+  console.log("Server running on port 8080");
 });

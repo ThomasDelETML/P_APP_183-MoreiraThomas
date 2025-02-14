@@ -3,50 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <title>Créer un compte - EJS</title>
     <link
-      href="https://fonts.cdnfonts.com/css/opus-magnus-condensed"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
-
-    <link href="https://fonts.cdnfonts.com/css/flash-rogers" rel="stylesheet" />
-
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/login.css" />
+    <link rel="stylesheet" href="/css/register.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <h1>EVROPA HERITAGE</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Accueil</a></li>
-          <li><a href="/login">Mon compte</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    <form action="/register" method="POST">
+      <h3>Créer un compte</h3>
+
+      <label for="username">Utilisateur :</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Choisissez un nom d'utilisateur"
+        required
+      />
+
+      <label for="password">Mot de passe :</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Choisissez un mot de passe"
+        required
+      />
+
+      <button type="submit">S'inscrire</button>
+
+      <div class="register-link">
+        <p>Déjà un compte ? <a href="/login">Se connecter</a></p>
       </div>
-      <form action="/register" method="post">
-        <h3>Créer votre compte</h3>
-
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" placeholder="Email ou Numéro" id="username" />
-
-        <label for="password">Mot de passe</label>
-        <input type="password" placeholder="Mot de passe" id="password" />
-
-        <button>Log In</button>
-
-        <p>Vous avez un compte? <a href="/login">Connectez-vous</a></p>
-      </form>
-    </main>
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 EVROPA HERITAGE. Tous droits réservés.</p>
-    </footer>
+    </form>
   </body>
 </html>
