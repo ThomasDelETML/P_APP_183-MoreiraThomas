@@ -1,73 +1,118 @@
 /*********************TOUT***********************/
-* {
+*,
+*:before,
+*:after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  background-color: whitesmoke;
 }
 
-/*********************BOULES DE COULEUR - BACKGROUND ***********************/
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/wallpaper.jpg");
+}
+
+header {
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-family: "Opus Magnus Outline Condensed Italic", sans-serif;
+}
+
+header h1 {
+  background: linear-gradient(to bottom, rgb(102, 0, 0), #9c0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 5;
+  font-size: 250px;
+  margin-top: 0;
+  margin-bottom: 1%;
+}
+
+p,
+h2,
+h3,
+a,
+nav,
+.gallery {
+  color: white;
+  font-family: Georgia, serif;
+}
+
+label {
+  color: black;
+  font-family: Georgia, serif;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/********************* BACKGROUND ***********************/
 .background {
   width: 430px;
   height: 520px;
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 50%;
-}
-
-.background .shape {
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  border-radius: 50%;
-}
-
-.shape:first-child {
-  background: linear-gradient(#1845ad, #23a2f6);
-  left: -80px;
-  top: -80px;
-}
-
-.shape:last-child {
-  background: linear-gradient(to right, #ff512f, #f09819);
-  right: -30px;
-  bottom: -80px;
+  top: 65%;
 }
 
 /*********************FORMULAIRE***********************/
 form {
-  width: 400px;
+  height: 450px;
+  width: 450px;
   background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 65%;
   left: 50%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
-  text-align: center;
+}
+
+form * {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
 }
 
 form h3 {
   font-size: 32px;
   font-weight: 500;
-  color: black;
-  margin-bottom: 20px;
+  line-height: 20px;
+  text-align: center;
 }
 
 label {
   display: block;
-  text-align: left;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
-  color: black;
 }
 
 input {
@@ -80,19 +125,18 @@ input {
   margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
-  color: black;
 }
 
 input::placeholder {
-  color: black;
+  color: whitesmoke;
 }
 
 /*********************BUTON SE CONNECTER****************/
 button {
   margin-top: 40px;
   width: 100%;
-  background-color: black;
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: black;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
@@ -102,21 +146,22 @@ button {
 }
 
 button:hover {
-  background-color: whitesmoke;
+  background-color: darkred;
 }
 
 /******************LINK SE CONNECTER *************/
 .register-link {
   margin-top: 20px;
+  text-align: center;
 }
 
 .register-link p {
   font-size: 14px;
-  color: black;
+  color: whitesmoke;
 }
 
 .register-link a {
-  color: black;
+  color: lightblue;
   text-decoration: underline;
   transition: 0.3s ease;
 }
