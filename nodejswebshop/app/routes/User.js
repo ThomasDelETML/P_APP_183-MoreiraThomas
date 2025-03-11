@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const registerController = require("../controllers/registerController");
 const loginController = require("../controllers/loginController");
+const logoutUser = require("../controllers/loginController");
 /* const db = require(".db/connectionDb");*/
 
 /*********************** ROUTES GET ***********************/
@@ -37,5 +38,7 @@ router.post("/register", registerController.registerUser);
 
 // Route POST pour la connexion
 router.post("/login", loginController.loginUser);
+
+router.post("/logout", loginController.logoutUser);
 
 module.exports = router;

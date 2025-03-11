@@ -51,18 +51,25 @@ module.exports = {
   },
 
   logoutUser: (req, res) => {
-    const sessionToken = req.cookies.session_token;
+    console.log("Tentative de déconnexion...");
+
+    console.log("Cookies reçus :", req.cookies);
+
+    const sessionToken = req.cookies.webshop;
     if (!sessionToken) {
+      console.log("Aucun token de session trouvé, redirection vers /login");
       return res.redirect("/login");
     }
 
-    // Supprimer le cookie
-    res.clearCookie("webshop");
+    // Suppression du cookie
+    res.clearCookie("webshop", { path: "/" });
+    console.log("Cookie supprimé, redirection vers /login");
+
     res.redirect("/login");
   },
 
   checkAuth: (req, res, next) => {
-    const sessionToken = req.cookies.session_token;
+    const sessionToken = req.cookies.webshop; //// GAAAAAAAAAAAAA und dein arbeite vur nichtligein,
 
     if (!sessionToken) {
       return res.redirect("/login");

@@ -45,14 +45,19 @@
       document
         .getElementById("logoutButton")
         .addEventListener("click", function () {
+          console.log("Bouton logout cliqué");
+
           fetch("/logout", {
             method: "POST",
             credentials: "same-origin",
-          }).then((response) => {
-            if (response.ok) {
-              window.location.href = "/login";
-            }
-          });
+          })
+            .then((response) => {
+              console.log("Réponse reçue:", response);
+              if (response.ok) {
+                window.location.href = "/login";
+              }
+            })
+            .catch((error) => console.error("Erreur de déconnexion:", error));
         });
     </script>
   </body>
